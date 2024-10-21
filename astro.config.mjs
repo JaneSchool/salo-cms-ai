@@ -15,6 +15,7 @@ import mdx from '@astrojs/mdx'
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://salo-cms-ai.pages.dev',
   vite: {
     build: {
       minify: true,

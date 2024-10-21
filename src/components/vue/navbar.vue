@@ -25,7 +25,6 @@ import {
 import { Button } from "@/components/vue/ui/button";
 import { Separator } from "@/components/vue/ui/separator";
 
-import { ChevronsDown, Menu } from "lucide-vue-next";
 import GithubIcon from "@/icons/vue/GithubIcon.vue";
 
 interface RouteProps {
@@ -57,24 +56,6 @@ const routeList: RouteProps[] = [
   },
 ];
 
-const featureList: FeatureProps[] = [
-  {
-    title: "Showcase Your Value ",
-    description: "Highlight how your product solves user problems.",
-  },
-  {
-    title: "Build Trust",
-    description:
-      "Leverages social proof elements to establish trust and credibility.",
-  },
-  {
-    title: "Capture Leads",
-    description:
-      "Make your lead capture form visually appealing and strategically.",
-  },
-];
-
-const isOpen = ref<boolean>(false);
 </script>
 
 <template>
@@ -92,7 +73,7 @@ const isOpen = ref<boolean>(false);
       <ChevronsDown
         class="bg-gradient-to-tr from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-foreground"
       />
-      SALO</a
+      SALO CMS</a
     >
     <!-- Mobile -->
     <div class="flex items-center lg:hidden">
@@ -118,7 +99,7 @@ const isOpen = ref<boolean>(false);
                   <ChevronsDown
                     class="bg-gradient-to-tr from-primary/70 via-primary to-primary/70 rounded-lg size-9 mr-2 border text-white"
                   />
-                  SALO
+                  SALO CMS
                 </a>
               </SheetTitle>
             </SheetHeader>
