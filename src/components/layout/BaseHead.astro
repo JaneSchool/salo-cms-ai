@@ -1,54 +1,39 @@
 ---
-import { siteConfig } from "@/site-config";
-import "@/styles/index.css";
-import { ViewTransitions } from "astro:transitions";
+import { siteConfig } from '@/site-config'
+import '@/styles/index.css'
+import { ViewTransitions } from 'astro:transitions'
 
 export interface Props {
-  title: string;
-  description?: string;
-  image?: string;
-  ogImage?: string | undefined;
-  articleDate?: string | undefined;
-  lang?: string;
+  title: string
+  description?: string
+  image?: string
+  ogImage?: string | undefined
+  articleDate?: string | undefined
+  lang?: string
 }
 
-const {
-  title,
-  description = siteConfig.description,
-  ogImage,
-  image = "/favicon.svg",
-  articleDate,
-} = Astro.props;
+const { title, description = siteConfig.description, ogImage, image = '/favicon.svg', articleDate } = Astro.props
 
-const socialImageURL = new URL(ogImage ? ogImage : "./og.png", Astro.url)
-  .href;
+const socialImageURL = new URL(ogImage ? ogImage : './og.png', Astro.url).href
 
-const titleSeparator = "•";
+const titleSeparator = '•'
 
-const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`;
+const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
 
-import {
-  DEFAULT_LOCALE,
-  LOCALES,
-  getLocalizedPathname,
-  pathNameIsInLanguage,
-} from "@/i18n/config";
+import { DEFAULT_LOCALE, LOCALES, getLocalizedPathname, pathNameIsInLanguage } from '@/i18n/config'
 
-const canonicalPathname = pathNameIsInLanguage(
-  Astro.url.pathname,
-  DEFAULT_LOCALE,
-)
+const canonicalPathname = pathNameIsInLanguage(Astro.url.pathname, DEFAULT_LOCALE)
   ? Astro.url.pathname
-  : getLocalizedPathname(Astro.url.pathname, DEFAULT_LOCALE);
-const canonicalURL = new URL(canonicalPathname, Astro.site);
+  : getLocalizedPathname(Astro.url.pathname, DEFAULT_LOCALE)
+const canonicalURL = new URL(canonicalPathname, Astro.site)
 
-const alternateLang = Object.keys(LOCALES);
+const alternateLang = Object.keys(LOCALES)
 const alternateLinks = alternateLang.map((lang: string) => {
   return {
     href: new URL(getLocalizedPathname(Astro.url.pathname, lang), Astro.site),
-    hreflang: lang,
-  };
-});
+    hreflang: lang
+  }
+})
 ---
 
 <!-- Global Metadata -->

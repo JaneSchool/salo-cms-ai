@@ -58,6 +58,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "concurrently": "^9.0.1",
+    "detect-browser-es": "^0.1.1",
     "lucide-vue-next": "^0.453.0",
     "motion": "^10.18.0",
     "radix-vue": "^1.9.7",

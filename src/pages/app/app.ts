@@ -1,7 +1,7 @@
 import '@/styles/index.css'
-import { createRouter, createWebHashHistory, createMemoryHistory } from 'vue-router'
-import type { App } from 'vue'
 import HomeView from '@/components/vue/views/HomeView.vue'
+import type { App } from 'vue'
+import { createMemoryHistory, createRouter, createWebHashHistory } from 'vue-router'
 const About = { template: '<div>About</div>' }
 const history = import.meta.env.SSR ? createMemoryHistory() : createWebHashHistory()
 

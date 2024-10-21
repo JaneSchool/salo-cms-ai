@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref } from 'vue'
 
-import { useColorMode } from "@vueuse/core";
-const mode = useColorMode();
-mode.value = "dark";
+import { useColorMode } from '@vueuse/core'
+const mode = useColorMode()
+mode.value = 'dark'
 
 import {
   NavigationMenu,
@@ -11,54 +11,46 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/vue/ui/navigation-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/vue/ui/sheet/";
+  NavigationMenuTrigger
+} from '@/components/vue/ui/navigation-menu'
+import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from '@/components/vue/ui/sheet/'
 
-import { Button } from "@/components/vue/ui/button";
-import { Separator } from "@/components/vue/ui/separator";
+import { Button } from '@/components/vue/ui/button'
+import { Separator } from '@/components/vue/ui/separator'
 
-import { Menu } from "lucide-vue-next";
-import GithubIcon from "@/icons/vue/GithubIcon.vue";
+import GithubIcon from '@/icons/vue/GithubIcon.vue'
+import { Menu } from 'lucide-vue-next'
 
 interface RouteProps {
-  href: string;
-  label: string;
+  href: string
+  label: string
 }
 
 interface FeatureProps {
-  title: string;
-  description: string;
+  title: string
+  description: string
 }
 
 const routeList: RouteProps[] = [
   {
-    href: "#testimonials",
-    label: "Testimonials",
+    href: '#testimonials',
+    label: 'Testimonials'
   },
   {
-    href: "#team",
-    label: "Team",
+    href: '#team',
+    label: 'Team'
   },
   {
-    href: "#contact",
-    label: "Contact",
+    href: '#contact',
+    label: 'Contact'
   },
   {
-    href: "#faq",
-    label: "FAQ",
-  },
-];
+    href: '#faq',
+    label: 'FAQ'
+  }
+]
 
-
-const isOpen = ref<boolean>(false);
+const isOpen = ref<boolean>(false)
 </script>
 
 <template>
