@@ -1,13 +1,12 @@
 ---
-import App from '@/components/vue/App.vue'
+import App from "@/components/vue/App.vue";
 ---
 
 <App client:load />
 
-
 <script is:inline lang="ts">
   import { createApp } from "vue";
-  import router from "./_app"; // Import the router
+  import router from "./app"; // Import the router
 
   // Create and mount the Vue app with router
   if (typeof window !== "undefined") {

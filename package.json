@@ -85,14 +85,17 @@
     "bun-types": "latest",
     "editorconfig-checker": "^6.0.0",
     "postcss": "^8.4.47",
-    "postcss-pxtorem": "^6.1.0",
     "postcss-cli": "^11.0.0",
     "postcss-discard-comments": "^7.0.3",
     "postcss-lightningcss": "^1.0.1",
     "postcss-preset-env": "^10.0.7",
+    "postcss-pxtorem": "^6.1.0",
     "terser": "^5.36.0",
+    "unplugin-auto-import": "^0.18.3",
+    "unplugin-vue-components": "^0.27.4",
     "vite-plugin-inspect": "^0.8.7",
     "vite-plugin-lightningcss": "^0.0.5",
+    "vite-plugin-vue-devtools": "^7.5.2",
     "wrangler": "^3.81.0"
   },
   "peerDependencies": {

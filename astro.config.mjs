@@ -10,12 +10,16 @@ import autoprefixer from 'autoprefixer'
 import cssDiscardComments from 'postcss-discard-comments'
 import Inspect from 'vite-plugin-inspect'
 import lightningcss from 'vite-plugin-lightningcss'
-
+import AutoImportComponents from 'unplugin-vue-components/vite'
+import AutoImportAPIs from 'unplugin-auto-import/astro'
+import VueDevTools from 'vite-plugin-vue-devtools'
 import mdx from '@astrojs/mdx'
+
+
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://salo-cms-ai.pages.dev',
+  site: "https://salo-cms-ai.pages.dev",
   prefetch: { prefetchAll: true },
   vite: {
     build: {
@@ -39,6 +43,18 @@ export default defineConfig({
       lightningcss({
         browserslist: ['>= 0.25%', 'last 2 versions', 'maintained node versions', 'Firefox ESR', 'not dead']
       }),
+      AutoImportComponents({
+        /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
+
+        dirs: ['src/components'], // allow auto load markdown components under ./src/components/
+        extensions: ['vue', 'md'], // allow auto import and register components used in markdown
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/, /\.mdx?/],
+        // resolvers: [], // Auto-import using resolvers
+        dts: 'src/types/components.d.ts'
+      }),
+      VueDevTools({
+        appendTo: 'app.ts'
+      }),
       Inspect({
         build: false,
         outputDir: '.vite-inspect'
@@ -50,7 +66,9 @@ export default defineConfig({
     ],
     resolve: {
       alias: {
-        '@': fileURLToPath(new URL('./src', import.meta.url))
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
+        '~': fileURLToPath(new URL('./src', import.meta.url)),
+        '~~': fileURLToPath(new URL('./', import.meta.url))
       }
     }
   },
@@ -64,10 +82,37 @@ export default defineConfig({
   }),
 
   integrations: [
+    AutoImportAPIs({
+      include: [
+        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.vue$/,
+        /\.vue\?vue/, // .vue
+        /\.md$/, // .md
+        /\.mdx$/ // .mdx
+      ],
+
+      imports: [
+        'vue',
+        'vue-router',
+        // 'vue-i18n',
+        // 'vue/macros',
+        // '@vueuse/head',
+        '@vueuse/core',
+        'pinia'
+      ],
+      dirs: [
+        /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
+        'src/composables',
+        'src/utils',
+        'src/stores'
+      ],
+      vueTemplate: true,
+      dts: 'src/types/auto-imports.d.ts'
+    }),
     react(),
     vue({
       jsx: true,
-      appEntrypoint: 'src/pages/app/_app',
+      appEntrypoint: 'src/pages/app/app',
       devtools: true
     }),
     mdx()

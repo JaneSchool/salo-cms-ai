@@ -44,7 +44,7 @@ import { ArrowRight } from 'lucide-vue-next'
         <div class="space-y-4 md:space-y-0 md:space-x-4">
           <Button class="w-5/6 md:w-1/4 font-bold group/arrow">
              <a
-              href="https://github.com/Frikadellios/salo-cms-ai.git"
+              href="/#/app"
               target="_blank">Get Started</a>
             <ArrowRight
               class="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform"
