@@ -25,6 +25,7 @@ import {
 import { Button } from "@/components/vue/ui/button";
 import { Separator } from "@/components/vue/ui/separator";
 
+import { Menu } from "lucide-vue-next";
 import GithubIcon from "@/icons/vue/GithubIcon.vue";
 
 interface RouteProps {
@@ -56,6 +57,8 @@ const routeList: RouteProps[] = [
   },
 ];
 
+
+const isOpen = ref<boolean>(false);
 </script>
 
 <template>
@@ -70,9 +73,13 @@ const routeList: RouteProps[] = [
       href="/"
       class="font-bold text-lg flex items-center"
     >
-      <ChevronsDown
-        class="bg-gradient-to-tr from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-foreground"
-      />
+      <img
+          class="w-9 h-9 mr-2 mx-auto relative leading-none flex items-center"
+          :src="
+            mode == 'light' ? 'favicon.webp' : 'favicon.webp'
+          "
+          alt="dashboard using shadcn-vue"
+        />
       SALO CMS</a
     >
     <!-- Mobile -->
@@ -96,9 +103,13 @@ const routeList: RouteProps[] = [
                   href="/"
                   class="flex items-center"
                 >
-                  <ChevronsDown
-                    class="bg-gradient-to-tr from-primary/70 via-primary to-primary/70 rounded-lg size-9 mr-2 border text-white"
-                  />
+                        <img
+          class="w-9 h-9 mr-2 mx-auto relative leading-none flex items-center"
+          :src="
+            mode == 'light' ? 'favicon.webp' : 'favicon.webp'
+          "
+          alt="dashboard using shadcn-vue"
+        />
                   SALO CMS
                 </a>
               </SheetTitle>
@@ -109,7 +120,7 @@ const routeList: RouteProps[] = [
                 v-for="{ href, label } in routeList"
                 :key="label"
                 as-child
-                variant="ghost"
+                variant="link"
                 class="justify-start text-base"
               >
                 <a
@@ -158,7 +169,7 @@ const routeList: RouteProps[] = [
       <Button
         as-child
         size="sm"
-        variant="ghost"
+        variant="link"
         aria-label="View on GitHub"
       >
         <a

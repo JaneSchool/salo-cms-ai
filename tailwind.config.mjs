@@ -1,31 +1,16 @@
 /** @type {import('tailwindcss').Config} */
-export const prefix = ''
-export const content = [
-  './pages/**/*.{ts,tsx,vue}',
-  './components/**/*.{ts,tsx,vue}',
-  './app/**/*.{ts,tsx,vue}',
-  './src/**/*.{ts,tsx,vue}'
-]
-export const theme = {
-  container: {
-    center: true,
-    padding: '2rem',
-    screens: {
-      '2xl': '1400px'
-    }
-  },
-  content: {
-    files: [
-      './src/**/*!(*.stories|*.spec|*.test).{ts,tsx,astro,md,vue,mdx,html}',
-      './index.html',
-      './src/**/*.{vue,js,ts,jsx,tsx}',
-      './pages/**/*.{vue,js,ts,jsx,tsx}',
-      './components/**/*.{vue,js,ts,jsx,tsx}',
-      './app/**/*.{vue,js,ts,jsx,tsx}'
-    ]
-  },
-  safelist: ['dark'],
-  prefix: '',
+export default {
+  darkMode: ['class'],
+  content: [
+    './src/**/*!(*.stories|*.spec|*.test).{ts,tsx,astro,md,vue,mdx,html}',
+    './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+    './node_modules/@tailwindcss/**/*',
+    './node_modules/tailwindcss/**',
+    './pages/**/*.{ts,tsx,vue}',
+    './components/**/*.{ts,tsx,vue}',
+    './app/**/*.{ts,tsx,vue}',
+    './src/**/*.{ts,tsx,vue}'
+  ],
   theme: {
     container: {
       center: true,
@@ -110,14 +95,6 @@ export const theme = {
         switch: 'rgba(0, 0, 0, 0.3) 0px 0px 1px, rgba(0, 0, 0, 0.2) 0px 1px 2px'
       },
       keyframes: {
-        'accordion-down': {
-          from: { height: '0px' }, // Changed 0 to '0px'
-          to: { height: 'var(--radix-accordion-content-height)' }
-        },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0px' }
-        },
         'collapsible-down': {
           from: { height: '0px' },
           to: { height: 'var(--radix-collapsible-content-height)' }
@@ -125,15 +102,41 @@ export const theme = {
         'collapsible-up': {
           from: { height: 'var(--radix-collapsible-content-height)' },
           to: { height: '0px' }
+        },
+        'background-position-spin': {
+          '0%': { backgroundPosition: 'top center' },
+          '100%': { backgroundPosition: 'bottom center' }
+        },
+        'accordion-down': {
+          from: {
+            height: '0'
+          },
+          to: {
+            height: 'var(--radix-accordion-content-height)'
+          }
+        },
+        'accordion-up': {
+          from: {
+            height: 'var(--radix-accordion-content-height)'
+          },
+          to: {
+            height: '0'
+          }
         }
       },
       animation: {
+        'background-position-spin': 'background-position-spin 3000ms infinite alternate',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'collapsible-down': 'collapsible-down 0.2s ease-in-out',
         'collapsible-up': 'collapsible-up 0.2s ease-in-out'
-      }
     }
   }
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('tailwindcss-animated'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/container-queries')
+  ]
 }
-export const plugins = []
