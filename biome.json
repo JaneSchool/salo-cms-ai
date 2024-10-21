@@ -7,7 +7,7 @@
     "defaultBranch": "master"
   },
   "files": {
-    "ignore": ["node_modules/**", "dist/**", "worker-configuration.d.ts"],
+    "ignore": ["node_modules/**", "dist/**", "src/styles/index.css", "worker-configuration.d.ts"],
     "ignoreUnknown": true
   },
   "formatter": {
