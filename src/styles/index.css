@@ -1,1 +1,169 @@
 @import "tailwindcss";
+
+@theme {
+  --font-family-display: "Inter, sans-serif";
+
+  --color-neon-yellow: oklch(94.44% 0.194 106.75);
+  --color-neon-pink: oklch(71.7% 0.25 360);
+  --color-neon-lime: oklch(91.5% 0.258 129);
+  --color-neon-cyan: oklch(91.3% 0.139 195.8);
+  --color-trancperent: oklch(90.54% 0.1545 194.77 / 0%);
+
+  --color--overlay-blurple: oklch(91.3% 0.139 195.8);
+  --overlay-plurple: oklch(59.17% 0.218 0.53 / 0.33);
+  --overlay-blurple: oklch(59.17% 0.218 0.53 / 10%);
+
+  --color-neutral-150: oklch(94.61% 0 0);
+  --color-neutral-750: oklch(32.11% 0 0);
+  --color-neutral-850: oklch(23.93% 0 0);
+
+  --color-background: oklch(14.67% 0.0041 49.31);
+  --color-foreground: oklch(96.19% 0 0);
+
+  --color-card: oklch(21.61% 0.0061 56.04);
+  --color-card-foreground: oklch(96.19% 0 0);
+
+  --color-popover: oklch(20.44% 0 0);
+  --color-popover-foreground: oklch(96.19% 0 0);
+
+  --color-primary: oklch(58.59% 0.2221 17.55);
+  --color-primary-foreground: oklch(96.99% 0.0149 12.4);
+
+  --color-secondary: oklch(27.41% 0.0055 286.03);
+  --color-secondary-foreground: oklch(98.48% 0 0);
+
+  --color-muted: oklch(26.97% 0 0);
+  --color-muted-foreground: oklch(71.19% 0.0129 286.07);
+
+  --color-scrollbar: oklch(71.19% 0.0129 286.07 / 30%);
+  --color-scrollbar-color: oklch(64.18% 0.036 257.43 / 30%);
+
+  --color-accent: oklch(26.85% 0.0063 34.3);
+  --color-accent-foreground: oklch(98.48% 0 0);
+
+  --color-destructive: oklch(39.59% 0.1331 25.72);
+  --color-destructive-foreground: oklch(97.1% 0.0127 17.38);
+
+  --color-border: oklch(27.41% 0.0055 286.03);
+  --color-input: oklch(27.41% 0.0055 286.03);
+  --color-ring: oklch(58.59% 0.2221 17.55);
+
+  --color-chart-1: oklch(52.92% 0.193 262.13);
+  --color-chart-2: oklch(69.83% 0.134 165.46);
+  --color-chart-3: oklch(72.32% 0.15 60.63);
+  --color-chart-4: oklch(61.92% 0.204 312.73);
+  --color-chart-5: oklch(61.23% 0.209 6.39);
+
+  --radius: 1rem;
+  --border-radius-xl: calc(var(--border-radius-lg) + 4px);
+  --border-radius: 1rem;
+  --border-radius-lg: 1rem;
+  --border-radius-md: calc(var(--border-radius-lg) - 2px);
+  --border-radius-sm: calc(var(--border-radius-md) - 2px);
+  --ds-shadow-border: 0 0 0 1.5px oklch(100% 3.5594404384177905e-8 106.37411429114086 / 14.5%);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-collapsible-down: collapsible-down 0.2s ease-in-out;
+  --animate-collapsible-up: collapsible-up 0.2s ease-in-out;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2;
+    @apply h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-sm bg-scrollbar;
+  }
+
+  html {
+    scrollbar-color: oklch(64.18% 0.036 257.43 / 30%);
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .antialised {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    transition: background-color 0.5s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply bg-background text-foreground;
+  }
+
+  img {
+    content-visibility: auto;
+  }
+
+  header {
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+
+  .border {
+    border-color: oklch(27.41% 0.0055 286.03);
+  }
+
+  .balance-text {
+    text-wrap: balance;
+  }
+
+  .page {
+    background:
+      linear-gradient(215deg, var(--overlay-blurple), transparent 40%),
+      radial-gradient(var(--overlay-blurple), transparent 40%) no-repeat -60vw -40vh /
+      105vw 200vh,
+      radial-gradient(var(--overlay-blurple), transparent 65%) no-repeat 50%
+      calc(100% + 20rem) / 60rem 30rem;
+  }
+}
+
+.text-color {
+  @apply animate-[animate8345_9s_linear_infinite];
+  background: linear-gradient(to right, #2d60ec, #3ccfda);
+  -webkit-text-fill-color: transparent;
+}
+
+h1 {
+  @apply scroll-m-20 text-4xl font-black tracking-tight lg:text-5xl;
+}
+
+h2 {
+  @apply mt-10 scroll-m-20 border-b pb-2 text-3xl font-black tracking-tight transition-colors first:mt-0;
+}
+
+h3 {
+  @apply mt-8 scroll-m-20 text-2xl font-semibold tracking-tight;
+}
+
+h4 {
+  @apply scroll-m-20 text-xl font-semibold tracking-tight;
+}

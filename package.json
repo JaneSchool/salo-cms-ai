@@ -2,9 +2,10 @@
   "name": "salo-cms-ai",
   "type": "module",
   "version": "1.0.1",
-  "packageManager": "bun@1.1.26",
+  "packageManager": "bun@1.1.29",
   "private": true,
-  "keywords": ["template", "biomejs", "bun", "typescript", "tailwindcss", "astrojs", "react", "shadcn"],
+  "license": "Apache-2.0",
+  "keywords": ["cms", "biomejs", "bun", "typescript", "vue", "tailwindcss", "astrojs", "react", "shadcn"],
   "author": "Hrihorii Ilin <devopsick@pm.me>",
   "description": "Content Managment System With Piggy AI",
   "repository": {

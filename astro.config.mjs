@@ -3,11 +3,11 @@ import cloudflare from '@astrojs/cloudflare'
 import react from '@astrojs/react'
 import vue from '@astrojs/vue'
 import postCssOklabPolyfill from '@csstools/postcss-oklab-function'
-import autoprefixer from 'autoprefixer'
-import cssDiscardComments from 'postcss-discard-comments'
 import tailwindcss from '@tailwindcss/vite'
 import legacy from '@vitejs/plugin-legacy'
 import { defineConfig } from 'astro/config'
+import autoprefixer from 'autoprefixer'
+import cssDiscardComments from 'postcss-discard-comments'
 import Inspect from 'vite-plugin-inspect'
 import lightningcss from 'vite-plugin-lightningcss'
 
@@ -30,11 +30,7 @@ export default defineConfig({
     },
     css: {
       postcss: {
-        plugins: [
-          postCssOklabPolyfill({ preserve: true }),
-          autoprefixer(),
-          cssDiscardComments({ removeAll: true })
-        ]
+        plugins: [postCssOklabPolyfill({ preserve: true }), autoprefixer(), cssDiscardComments({ removeAll: true })]
       }
     },
     plugins: [
