@@ -1,0 +1,70 @@
+{
+  "name": "salo-cms-ai",
+  "type": "module",
+  "version": "1.0.1",
+  "packageManager": "bun@1.1.26",
+  "private": true,
+  "keywords": ["template", "biomejs", "bun", "typescript", "tailwindcss", "astrojs", "react", "shadcn"],
+  "author": "Hrihorii Ilin <devopsick@pm.me>",
+  "description": "Content Managment System With Piggy AI",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Frikadellios/jane-school.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Frikadellios/jane-school/issues"
+  },
+  "homepage": "https://github.com/Frikadellios/jane-scholl#readme",
+  "engines": {
+    "node": ">=18.19.1 <19 || >=20.17.0 <21 || >=21.1.0"
+  },
+  "scripts": {
+    "dev": "bunx --bun astro dev --verbose",
+    "start": "bun run cf-typegen && bun run astro check --verbose && bunx --bun astro dev --verbose",
+    "build": "bun run astro check --verbose && bunx --bun astro build --verbose ./dist",
+    "preview": "bunx --bun astro build ./dist && bun run wrangler pages dev ./dist",
+    "astro": "astro",
+    "deploy": "bunx --bun astro build -- --force ./dist && wbun run wrangler pages deploy ./dist",
+    "cf-typegen": "bun run wrangler types"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/cloudflare": "^11.1.0",
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/ts-plugin": "^1.10.3",
+    "@astrojs/vue": "^4.5.2",
+    "@csstools/postcss-oklab-function": "^4.0.3",
+    "@tailwindcss/cli": "^4.0.0-alpha.28",
+    "@tailwindcss/node": "^4.0.0-alpha.28",
+    "@tailwindcss/postcss": "^4.0.0-alpha.28",
+    "@tailwindcss/vite": "^4.0.0-alpha.28",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@vueuse/core": "^11.1.0",
+    "astro": "^4.16.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^4.0.0-alpha.28",
+    "typescript": "^5.6.3",
+    "vue": "^3.5.12",
+    "vue-router": "^4.4.5",
+    "vue-tsc": "^2.1.6"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241018.0",
+    "@types/bun": "latest",
+    "@types/mdx": "^2.0.13",
+    "@types/node": "^22.7.7",
+    "@types/web": "^0.0.174",
+    "autoprefixer": "^10.4.20",
+    "bun-devtools": "latest",
+    "bun-types": "latest",
+    "postcss": "^8.4.47",
+    "postcss-lightningcss": "^1.0.1",
+    "postcss-preset-env": "^10.0.7",
+    "wrangler": "^3.81.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
