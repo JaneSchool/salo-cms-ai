@@ -16,23 +16,23 @@ interface ServiceProps {
 
 const serviceList: ServiceProps[] = [
   {
-    title: 'Custom Domain Integration',
-    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit adipisicing.',
+    title: 'Powerfully Simple Oink',
+    description: 'Highlights simplicity and effectiveness with a catchy twist',
     pro: 0
   },
   {
-    title: 'Social Media Integrations',
-    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, dicta.',
+    title: 'Uniquely Effective Grunt',
+    description: 'Playful and memorable, emphasizes community and fun',
     pro: 0
   },
   {
-    title: 'Email Marketing Integrations',
-    description: 'Lorem dolor sit amet adipisicing.',
+    title: 'Grunt-Email Marketing',
+    description: 'Streamlining Your Content, One Grunt at a Time!',
     pro: 0
   },
   {
-    title: 'SEO Optimization',
-    description: 'Lorem ipsum dolor sit amet consectetur.',
+    title: 'Ultimate SALO-SEO',
+    description: 'Grunting Towards Content Perfection!',
     pro: 1
   }
 ]
@@ -43,17 +43,16 @@ const serviceList: ServiceProps[] = [
     id="services"
     class="container px-10 mx-auto py-24 sm:py-32"
   >
-    <h2 class="text-lg text-primary font-black text-center mb-2 tracking-wider">
-      Services
+    <h2 class="text-lg text-primary text-color max-w-18 font-black text-center mb-2 tracking-wider">
+      Our Services
     </h2>
 
-    <h3 class="text-3xl text-color md:text-4xl text-center font-bold mb-4">
-      Grow Your Business
+    <h3 class="text-3xl md:text-4xl font-black text-center font-bold mb-4">
+       Ultimate Unmatched Grunting - Simplify Your Success!
     </h3>
-    <h3 class="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-      From marketing and sales to operations and strategy, we have the expertise
-      to help you achieve your goals.
-    </h3>
+    <p class="md:w-1/2 mx-auto font-black text-xl text-center text-primary mb-8">
+    Let's Grow Your Business!
+    </p>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
     <div

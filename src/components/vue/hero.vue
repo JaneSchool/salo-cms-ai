@@ -17,28 +17,28 @@ import { ArrowRight } from 'lucide-vue-next'
           variant="outline"
           class="text-sm py-2"
         >
-          <span class="mr-2 text-primary">
-            <Badge>New</Badge>
+          <span class="mr-2 animate-pulse text-primary">
+            <Badge class="animate-pulse">New</Badge>
           </span>
-          <span> Design is out now! </span>
+          <span> Ultimate CMS with Unmatched Grunting</span>
         </Badge>
 
         <div
           class="max-w-screen-md mx-auto text-center text-5xl md:text-6xl font-bold"
         >
           <h1>
-            Experience the
+            Make
             <span
               class="text-transparent bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text"
-              >Astro/Cloudflare
+              >Your Work
             </span>
-            working
+            Easier
           </h1>
         </div>
-
-        <p class="max-w-screen-sm mx-auto text-xl text-muted-foreground">
-          We're more than just a tool, we're a community of passionate creators.
-          Get access to exclusive resources, tutorials, and support.
+        <h2>Powerfully Simply and Uniquely Effective !</h2>
+        <p class="max-w-screen-sm mx-auto text-xl text-foreground">
+          More Than Just a oink Tool – We're a Grunting Community of Passionate Creators.
+          Join Us for Exclusive Resources, Tutorials, and Unmatched Support.
         </p>
 
         <div class="space-y-4 md:space-y-0 md:space-x-4">
@@ -74,7 +74,7 @@ import { ArrowRight } from 'lucide-vue-next'
         <img
           class="w-full md:w-[1200px] mx-auto rounded-lg relative rouded-lg leading-none flex items-center border border-t-2 border-t-primary/30 img-border-animation"
           :src="
-            mode == 'light' ? 'og.png' : 'og.png'
+            mode == 'light' ? 'og.webp' : 'og.webp'
           "
           alt="dashboard using shadcn-vue"
         />

@@ -23,6 +23,7 @@
   --color--overlay-blurple: oklch(91.3% 0.139 195.8);
   --overlay-plurple: oklch(59.17% 0.218 0.53 / 0.33);
   --overlay-blurple: oklch(71.7% 0.25 360 / 10%);
+
   --color-green: oklch(0.5 0.207 156.57);
   --color-black: oklch(0% 0 0);
   --color-white: oklch(100% 0 0);
@@ -83,15 +84,6 @@
   --color-chart-3: oklch(72.32% 0.15 60.63);
   --color-chart-4: oklch(61.92% 0.204 312.73);
   --color-chart-5: oklch(61.23% 0.209 6.39);
-
-  --radius: 1rem;
-  --border-radius: 1rem;
-  --border-radius-xl: calc(var(--border-radius-lg) + 4px);
-  --border-radius-lg: 1rem;
-  --border-radius-md: calc(var(--border-radius-lg) - 2px);
-  --border-radius-sm: calc(var(--border-radius-md) - 2px);
-
-  --ds-shadow-border: 0 0 0 1.5px oklch(100% 3.5594404384177905e-8 106.37411429114086 / 14.5%);
 
   --animate-border: border 4s linear infinite;
   --animate-accordion-down: accordion-down 200ms ease-in-out;
