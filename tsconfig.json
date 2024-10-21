@@ -1,22 +1,10 @@
 {
   "extends": "astro/tsconfigs/base",
-  "include": [
-    ".astro/types.d.ts",
-    "**/*"
-  ],
-  "exclude": [
-    "dist"
-  ],
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"],
   "compilerOptions": {
-    "types": [
-      "@cloudflare/workers-types/2023-07-01",
-      "bun-types"
-    ],
-    "lib": [
-      "ESNext",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "types": ["@cloudflare/workers-types/2023-07-01", "bun-types"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "target": "ESNext",
     "module": "ESNext",
     "strictNullChecks": true,
@@ -33,7 +21,6 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false,
-    "jsxImportSource": "vue",
     "useDefineForClassFields": true,
     "sourceMap": true,
     "resolveJsonModule": true,
@@ -41,9 +28,7 @@
     "noImplicitReturns": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
     "plugins": [
       {

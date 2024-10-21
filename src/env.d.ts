@@ -5,11 +5,10 @@
 /// <reference lib="dom" />
 /// <reference lib="dom.iterable" />
 
-
-type Runtime = import("@astrojs/cloudflare").Runtime<Env>;
+type Runtime = import('@astrojs/cloudflare').Runtime<Env>
 
 declare namespace App {
-	interface Locals extends Runtime {}
+  interface Locals extends Runtime {}
 }
 
 interface ImportMetaEnv {
@@ -23,10 +22,5 @@ interface ImportMeta {
 
 declare module '*.astro' {
   const Component: React.ComponentType // or use `unknown` if more appropriate
-  export default Component
-}
-
-declare module '*.astro' {
-  const Component: vue.ComponentType // or use `unknown` if more appropriate
   export default Component
 }
