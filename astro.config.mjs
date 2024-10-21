@@ -16,6 +16,7 @@ import mdx from '@astrojs/mdx'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://salo-cms-ai.pages.dev',
+  prefetch: { prefetchAll: true },
   vite: {
     build: {
       minify: true,
@@ -53,13 +54,22 @@ export default defineConfig({
       }
     }
   },
-  output: 'server',
-
+  output: 'hybrid',
   adapter: cloudflare({
+    imageService: 'cloudflare',
+    functionPerRoute: true,
     platformProxy: {
       enabled: true
     }
   }),
 
-  integrations: [react(), vue({ devtools: true }), mdx()]
+  integrations: [
+    react(),
+    vue({
+      jsx: true,
+      appEntrypoint: 'src/pages/app/_app',
+      devtools: true
+    }),
+    mdx()
+  ]
 })
